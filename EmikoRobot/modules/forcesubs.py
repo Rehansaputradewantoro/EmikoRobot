@@ -40,7 +40,7 @@ def _onUnMuteRequest(client, cb):
                 except UserNotParticipant:
                     client.answer_callback_query(
                         cb.id,
-                        text=f"❗ Join our @{channel} channel and press 'Unmute Me' button.",
+                        text=f"❗ Join Dulu Bang @{channel} channel Kalo Udah Klik 'Unmute Me' button.",
                         show_alert=True,
                     )
             else:
@@ -80,7 +80,7 @@ def _check_member(client, message):
             except UserNotParticipant:
                 try:
                     sent_message = message.reply_text(
-                        "Welcome {} 🙏 \n **You haven't joined our @{} Channel yet**👷 \n \nPlease Join [Our Channel](https://t.me/{}) and hit the **UNMUTE ME** Button. \n \n ".format(
+                        "Eh Lu {} 🙏 \n **Join Dulu @{} Channel yet**👷 \n \nCepet Join Lu [Our Channel](https://t.me/{}) Kalo Udah Klik Tombol **UNMUTE ME** Button. \n \n ".format(
                             message.from_user.mention, channel, channel
                         ),
                         disable_web_page_preview=True,
@@ -105,13 +105,13 @@ def _check_member(client, message):
                     )
                 except ChatAdminRequired:
                     sent_message.edit(
-                        "😕 **Emiko is not admin here..**\n__Give me ban permissions and retry.. \n#Ending FSub...__"
+                        "😕 **Gua Bukan admin Disini..**\n__Kasih Akses Ban dulu  \n#Ending FSub...__"
                     )
 
             except ChatAdminRequired:
                 client.send_message(
                     chat_id,
-                    text=f"😕 **I not an admin of @{channel} channel.**\n__Give me admin of that channel and retry.\n#Ending FSub...__",
+                    text=f"😕 **I Tidak ada akses admin @{channel} channel.**\n__Kasih Akses Admin dulu Habis Itu Reload.\n#Ending FSub...__",
                 )
 
 
@@ -156,7 +156,7 @@ def config(client, message):
                         disable_web_page_preview=True,
                     )
                 except (UsernameNotOccupied, PeerIdInvalid):
-                    message.reply_text(f"❗ **Invalid Channel Username.**")
+                    message.reply_text(f"❗ **Salah Channel Username.**")
                 except Exception as err:
                     message.reply_text(f"❗ **ERROR:** ```{err}```")
         else:
@@ -175,7 +175,7 @@ def config(client, message):
 
 __help__ = """
 *Force Subscribe:*
-❂ Emiko can mute members who are not subscribed your channel until they subscribe
+❂ HanRobot can mute members who are not subscribed your channel until they subscribe
 ❂ When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
 ❂*Setup*
 *Only creator*
