@@ -37,10 +37,10 @@ async def mentionall(event):
         ):
             is_admin = True
     if not is_admin:
-        return await event.reply("__Only admins can mention all!__")
+        return await event.reply("__Lu Bukan Admin Anjeng!__")
 
     if event.pattern_match.group(1) and event.is_reply:
-        return await event.reply("__Give me one argument!__")
+        return await event.reply("__Mana Kata-Kata Nya Goblok! !__")
     elif event.pattern_match.group(1):
         mode = "text_on_cmd"
         msg = event.pattern_match.group(1)
@@ -51,7 +51,7 @@ async def mentionall(event):
             return await event.respond(
                 "__I can't mention members for older messages! (messages which are sent before I'm added to group)__")
     else:
-        return await event.reply("__Reply to a message or give me some text to mention others!__")
+        return await event.reply("__Reply Chat nya Kalo Mau Tag All Goblok!__")
 
     spam_chats.append(chat_id)
     usrnum = 0
@@ -98,22 +98,22 @@ async def cancel_spam(event):
         ):
             is_admin = True
     if not is_admin:
-        return await event.reply("__Only admins can execute this command!__")
+        return await event.reply("__Anjeng Lu Bukan Admin Goblok!__")
     if not event.chat_id in spam_chats:
-        return await event.reply("__There is no proccess on going...__")
+        return await event.reply("__Otw Manggil Sekumpulan Anak Babi! __")
     else:
         try:
             spam_chats.remove(event.chat_id)
         except:
             pass
-        return await event.respond("__Stopped Mention.__")
+        return await event.respond("__Ya Gua Stop Anjeng! __")
 
 
 __mod_name__ = "Tag all"
 __help__ = """
 ──「 Mention all func 」──
 
-Emiko Can Be a Mention Bot for your group.
+Han Can Be a Mention Bot for your group.
 
 Only admins can tag all.  here is a list of commands
 
